@@ -11,10 +11,10 @@ public class Main {
         System.out.println(
                 "1. Grade Celsius\n2.Grade Fahrenheit\nSelectati unitatea de masura in care vreti sa convertiti:");
         select2 = m.nextInt();
-        menu(select,select2);
+        System.out.println(menu(select, select2));
     }
 
-    public static double menu(int select,int select2) {
+    public static double menu(int select, int select2) {
         double result = 0;
         Scanner m = new Scanner(System.in);
 
@@ -25,12 +25,12 @@ public class Main {
             if (select == 1 && select2 == 2) {
                 System.out.println("Introduceti valoarea:");
                 double a = m.nextDouble();
-                System.out.println(result = calc(a));
+                result=calc(a);
             }
             if (select == 2 && select2 == 1) {
                 System.out.println("Introduceti valoarea:");
                 double a = m.nextDouble();
-                System.out.println(result = calc2(a));
+                result=calc2(a);
             }
         }
         return result;
@@ -48,4 +48,3 @@ public class Main {
         return res;
     }
 }
-// neterminat
