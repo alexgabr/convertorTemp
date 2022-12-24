@@ -1,23 +1,33 @@
 import java.util.Scanner;
-
+//INCOMPLETTTTTTTTTTTTTTTT
 public class Main {
     public static void main(String[] args) {
         int select, select2;
+        int chose;
+
         Scanner m = new Scanner(System.in);
 
+        //afisarea meniului
         System.out.println(
                 "1. Grade Celsius\n2. Grade Fahrenheit\nSelectati unitatea de masura din care vreti sa convertiti:");
         select = m.nextInt();
         System.out.println(
                 "1. Grade Celsius\n2. Grade Fahrenheit\nSelectati unitatea de masura in care vreti sa convertiti:");
         select2 = m.nextInt();
+
+        //returnarea rezultatului calcului
         menu(select,select2);
-        System.out.println("Doriti sa mai convertiti odata? (0. Da/1. Nu)");
+
+        //afisarea intrebarii
+        System.out.println("Doriti sa mai convertiti odata? (0. Nu/1. Da)");
+        chose = m.nextInt();
+        int ch = ch(chose);
     }
 
     public static double menu(int select, int select2) {
-        double result = 0;
-        boolean chose = true;
+        double result = 0, a;
+        int c;
+        int cho=1;
         Scanner m = new Scanner(System.in);
 
         if (select == select2) {
@@ -27,17 +37,18 @@ public class Main {
             while (select == 1 || select == 2 || select2 == 1 || select2 == 2) {
                 if (select == 1 && select2 == 2) {
                     System.out.println("Introduceti valoarea:");
-                    double a = m.nextDouble();
+                    a = m.nextDouble();
                     System.out.println(result = calc(a));
                 }
                 if (select == 2 && select2 == 1) {
                     System.out.println("Introduceti valoarea:");
-                    double a = m.nextDouble();
+                    a = m.nextDouble();
                     System.out.println(result = calc2(a));
                 }
+                c=ch(cho);
+                cho=c;
             }
-            ch(chose);
-        } while (chose);
+        } while (cho==1);
         return result;
     }
 
@@ -53,13 +64,13 @@ public class Main {
         return res;
     }
 
-    public static boolean ch(boolean cho) {
+    public static int ch(int cho) {
         Scanner c = new Scanner(System.in);
         int chose = c.nextInt();
-        if (chose == 0) {
-            cho = true;
-        } else if (chose == 1) {
-            cho = false;
+        if (chose == 1) {
+            cho = 1;
+        } else if (chose == 0) {
+            cho = 0;
         }
         return cho;
     }
