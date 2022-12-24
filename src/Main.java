@@ -1,37 +1,32 @@
 import java.util.Scanner;
-//INCOMPLETTTTTTTTTTTTTTTT
+
+//Sa zicem ca e complet...
 public class Main {
     public static void main(String[] args) {
-        int select, select2;
-        int chose;
-
+        double sel, sel2;
         Scanner m = new Scanner(System.in);
 
-        //afisarea meniului
+        // afisarea meniului
         System.out.println(
                 "1. Grade Celsius\n2. Grade Fahrenheit\nSelectati unitatea de masura din care vreti sa convertiti:");
-        select = m.nextInt();
+        sel = m.nextDouble();
         System.out.println(
                 "1. Grade Celsius\n2. Grade Fahrenheit\nSelectati unitatea de masura in care vreti sa convertiti:");
-        select2 = m.nextInt();
+        sel2 = m.nextDouble();
 
-        //returnarea rezultatului calcului
-        menu(select,select2);
-
-        //afisarea intrebarii
-        System.out.println("Doriti sa mai convertiti odata? (0. Nu/1. Da)");
-        chose = m.nextInt();
-        int ch = ch(chose);
+        // returnarea rezultatului calcului
+        menu(sel, sel2);
     }
 
-    public static double menu(int select, int select2) {
+    public static double menu(double select, double select2) {
         double result = 0, a;
-        int c;
-        int cho=1;
+        int cho = 1;
         Scanner m = new Scanner(System.in);
+        Scanner ch = new Scanner(System.in);
 
         if (select == select2) {
             System.out.println("Nu puteti alege aceasi varianta!");
+
         }
         do {
             while (select == 1 || select == 2 || select2 == 1 || select2 == 2) {
@@ -45,10 +40,11 @@ public class Main {
                     a = m.nextDouble();
                     System.out.println(result = calc2(a));
                 }
-                c=ch(cho);
-                cho=c;
+                System.out.println("Doriti sa mai convertiti odata? (0. Nu/1. Da)");
+                cho = ch.nextInt();
+                break;
             }
-        } while (cho==1);
+        } while (cho == 1);
         return result;
     }
 
@@ -62,16 +58,5 @@ public class Main {
         double res;
         res = (a - 32) / 1.8;
         return res;
-    }
-
-    public static int ch(int cho) {
-        Scanner c = new Scanner(System.in);
-        int chose = c.nextInt();
-        if (chose == 1) {
-            cho = 1;
-        } else if (chose == 0) {
-            cho = 0;
-        }
-        return cho;
     }
 }
