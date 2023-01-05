@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-//Sa zicem ca e complet...
 public class Main {
     public static void main(String[] args) {
         double sel, sel2;
@@ -47,13 +46,13 @@ public class Main {
         } while (cho == 1);
         return result;
     }
-
+    //celsius-fahrenheit
     public static double calc(double a) {
         double res;
         res = a * 1.8 + 32;
         return res;
     }
-
+    //fahrenheit-celsius
     public static double calc2(double a) {
         double res;
         res = (a - 32) / 1.8;
