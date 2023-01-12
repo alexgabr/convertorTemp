@@ -15,6 +15,8 @@ public class Main {
 
         // returnarea rezultatului calcului
         menu(sel, sel2);
+
+        m.close();
     }
 
     public static double menu(double select, double select2) {
@@ -44,15 +46,21 @@ public class Main {
                 break;
             }
         } while (cho == 1);
+
+        m.close();
+        ch.close();
+
         return result;
     }
-    //celsius-fahrenheit
+
+    // celsius-fahrenheit
     public static double calc(double a) {
         double res;
         res = a * 1.8 + 32;
         return res;
     }
-    //fahrenheit-celsius
+
+    // fahrenheit-celsius
     public static double calc2(double a) {
         double res;
         res = (a - 32) / 1.8;
